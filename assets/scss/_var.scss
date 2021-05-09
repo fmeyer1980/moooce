@@ -1,0 +1,133 @@
+// :root {
+//   --gutter: var(--size-400);
+//   --container-width: 71.25rem;
+//   --container-padding: var(--gutter);
+//   --primary-color: #976D35;
+//   @include media-query('xl') {
+//     --container-padding: calc((100vw - var(--container-width)) / 2);
+//   }
+
+//   --size-xs: clamp(0.51rem, 0.48rem + 0.12vw, 0.58rem);
+//   --size-sm: clamp(0.61rem, 0.57rem + 0.19vw, 0.72rem);
+//   --size-100: clamp(0.73rem, 0.67rem + 0.28vw, 0.90rem);
+//   --size-200: clamp(0.88rem, 0.79rem + 0.42vw, 1.13rem);
+//   --size-300: clamp(1.05rem, 0.93rem + 0.59vw, 1.41rem);
+//   --size-400: clamp(1.26rem, 1.09rem + 0.83vw, 1.76rem);
+//   --size-500: clamp(1.51rem, 1.28rem + 1.14vw, 2.20rem);
+//   --size-600: clamp(1.81rem, 1.50rem + 1.55vw, 2.75rem);
+//   --size-700: clamp(2.18rem, 1.76rem + 2.09vw, 3.43rem);
+//   --size-800: clamp(2.61rem, 2.05rem + 2.80vw, 4.29rem);
+//   --size-900: clamp(3.14rem, 2.39rem + 3.72vw, 5.36rem);
+//   --size-lg: clamp(3.76rem, 2.78rem + 4.91vw, 6.71rem);
+//   --size-xl: clamp(4.51rem, 3.23rem + 6.44vw, 8.38rem);
+// }
+
+:root {
+  --gutter: var(--size-400);
+  --container-width: 87.5em;
+  --container-padding: var(--gutter);
+  @include media-query('xl') {
+    --container-padding: calc((100vw - var(--container-width)) / 2);
+  }
+  --fluid-min-width: 320;
+  --fluid-max-width: 1400;
+  
+
+  --fluid-screen: 100vw;
+  --fluid-bp: calc(
+    (var(--fluid-screen) - var(--fluid-min-width) / 16 * 1rem) /
+      (var(--fluid-max-width) - var(--fluid-min-width))
+  );
+}
+
+@media screen and (min-width: 1400px) {
+  :root {
+    --fluid-screen: calc(var(--fluid-max-width) * 1px);
+  }
+}
+
+:root {
+  --size-xs-min: 10.42;
+  --size-xs-max: 11.26;
+  --size-xs: calc(
+    ((var(--size-xs-min) / 16) * 1rem) + (var(--size-xs-max) - var(--size-xs-min)) *
+      var(--fluid-bp)
+  );
+
+  --size-sm-min: 12.50;
+  --size-sm-max: 14.08;
+  --size-sm: calc(
+    ((var(--size-sm-min) / 16) * 1rem) + (var(--size-sm-max) - var(--size-sm-min)) *
+      var(--fluid-bp)
+  );
+
+  --size-100-min: 15.00;
+  --size-100-max: 17.60;
+  --size-100: calc(
+    ((var(--size-100-min) / 16) * 1rem) + (var(--size-100-max) - var(--size-100-min)) *
+      var(--fluid-bp)
+  );
+
+  --size-200-min: 18.00;
+  --size-200-max: 22.00;
+  --size-200: calc(
+    ((var(--size-200-min) / 16) * 1rem) + (var(--size-200-max) - var(--size-200-min)) *
+      var(--fluid-bp)
+  );
+
+  --size-300-min: 21.60;
+  --size-300-max: 27.50;
+  --size-300: calc(
+    ((var(--size-300-min) / 16) * 1rem) + (var(--size-300-max) - var(--size-300-min)) *
+      var(--fluid-bp)
+  );
+
+  --size-400-min: 25.92;
+  --size-400-max: 34.38;
+  --size-400: calc(
+    ((var(--size-400-min) / 16) * 1rem) + (var(--size-400-max) - var(--size-400-min)) *
+      var(--fluid-bp)
+  );
+
+  --size-500-min: 31.10;
+  --size-500-max: 42.97;
+  --size-500: calc(
+    ((var(--size-500-min) / 16) * 1rem) + (var(--size-500-max) - var(--size-500-min)) *
+      var(--fluid-bp)
+  );
+
+  --size-600-min: 37.32;
+  --size-600-max: 53.71;
+  --size-600: calc(
+    ((var(--size-600-min) / 16) * 1rem) + (var(--size-600-max) - var(--size-600-min)) *
+      var(--fluid-bp)
+  );
+
+  --size-700-min: 44.79;
+  --size-700-max: 67.14;
+  --size-700: calc(
+    ((var(--size-700-min) / 16) * 1rem) + (var(--size-700-max) - var(--size-700-min)) *
+      var(--fluid-bp)
+  );
+
+  --size-800-min: 53.75;
+  --size-800-max: 83.92;
+  --size-800: calc(
+    ((var(--size-800-min) / 16) * 1rem) + (var(--size-800-max) - var(--size-800-min)) *
+      var(--fluid-bp)
+  );
+
+  --size-900-min: 64.50;
+  --size-900-max: 104.90;
+  --size-900: calc(
+    ((var(--size-900-min) / 16) * 1rem) + (var(--size-900-max) - var(--size-900-min)) *
+      var(--fluid-bp)
+  );
+
+  --size-lg-min: 77.40;
+  --size-lg-max: 131.13;
+  --size-lg: calc(
+    ((var(--size-lg-min) / 16) * 1rem) + (var(--size-lg-max) - var(--size-lg-min)) *
+      var(--fluid-bp)
+  );
+}
